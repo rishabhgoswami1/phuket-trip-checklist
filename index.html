@@ -241,7 +241,7 @@ document.addEventListener('click', function (e) {
   if (!a) return;
   var name = (a.childNodes[0] && a.childNodes[0].textContent || a.textContent).trim();
   var num = a.getAttribute('href').replace('tel:', '');
-  if (!confirm('Call ' + (name && name !== num ? name + ' (' + num + ')' : num) + '?')) e.preventDefault();
+  if (!confirm('Call ' + (name && name !== num ? name + ' on ' + num : num) + '?')) e.preventDefault();
 });
 </script>
 </body>
