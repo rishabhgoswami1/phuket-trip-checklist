@@ -280,3 +280,6 @@ section.fold details[open] > summary { border-bottom: 1px solid var(--line); }
 @media (prefers-reduced-motion: reduce) {
   .cta-hero, .cta-card, .cta-float, .cta-hero .arrow, .cta-card .arrow { animation: none; }
 }
+
+.subhead { display: flex; justify-content: space-between; align-items: center; margin: 22px 4px 6px; font-size: 15px; font-weight: 800; color: var(--ink); }
+.subhead .count2 { font-size: 12px; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 3px 9px; border-radius: 999px; }

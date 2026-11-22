@@ -97,6 +97,7 @@
 <label><input type="checkbox" data-k="i49"><span>Sealed snacks (thepla, khakhra, namkeen)</span></label>
 </section>
 
+<div class="subhead"><span>✈️ Travel days</span><span class="count2" id="count2"></span></div>
 <section class="fold">
 <details>
 <summary><h2>✈️ Wed 25 Nov: travel day</h2><span class="tap">Tap</span></summary>
@@ -167,9 +168,13 @@
 
   function render() {
     boxes.forEach(function (b) { b.checked = !!state[b.dataset.k]; });
-    var done = boxes.filter(function (b) { return b.checked; }).length;
-    document.getElementById('meter').style.width = (done / boxes.length * 100) + '%';
-    document.getElementById('count').textContent = done + ' / ' + boxes.length;
+    var prep = boxes.filter(function (b) { return !b.closest('section.fold'); });
+    var trip = boxes.filter(function (b) { return b.closest('section.fold'); });
+    var done = prep.filter(function (b) { return b.checked; }).length;
+    document.getElementById('meter').style.width = (done / prep.length * 100) + '%';
+    document.getElementById('count').textContent = done + ' / ' + prep.length;
+    var done2 = trip.filter(function (b) { return b.checked; }).length;
+    document.getElementById('count2').textContent = done2 + ' / ' + trip.length;
     document.querySelectorAll('section').forEach(function (sec) {
       var bs = sec.querySelectorAll('input[type=checkbox]');
       if (!bs.length) return;
