@@ -186,3 +186,8 @@ footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 2
   .hero h1 { font-size: 26px; }
   .stop { grid-template-columns: 56px 1fr; }
 }
+
+a.grab { text-decoration: none; }
+a.grab:hover { text-decoration: underline; }
+.taxi { display: inline-block; margin: 2px 0 6px; font-size: 13px; font-weight: 700; color: #8a4b12; background: #fff4e8; padding: 4px 10px; border-radius: 999px; }
+@media (prefers-color-scheme: dark) { .taxi { background: #3a2a1b; color: #f3c79b; } }
