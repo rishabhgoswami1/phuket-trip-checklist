@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Phuket Trip Checklist</title>
+<style>
+  :root { --bg:#fbfaf7; --card:#fff; --ink:#1d1d1f; --muted:#6b6b70; --line:#e4e2dc; --accent:#0f7b6c; --done:#9a9a9f; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141416; --card:#1e1e21; --ink:#f2f2f4; --muted:#a1a1a8; --line:#2e2e33; --accent:#3cc4ad; --done:#6c6c72; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.45 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  main { max-width:640px; margin:0 auto; padding:20px 16px 60px; }
+  header h1 { font-size:24px; margin:0; }
+  header p { color:var(--muted); margin:4px 0 0; font-size:14px; }
+  .bar { position:sticky; top:0; z-index:2; background:var(--bg); padding:12px 0 10px; border-bottom:1px solid var(--line); margin-bottom:8px; }
+  .meter { height:8px; background:var(--line); border-radius:4px; overflow:hidden; margin-top:8px; }
+  .meter span { display:block; height:100%; width:0; background:var(--accent); transition:width .2s; }
+  .count { font-size:13px; color:var(--muted); margin-top:4px; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:14px 0; }
+  h2 { font-size:17px; margin:0 0 6px; display:flex; justify-content:space-between; gap:8px; }
+  h2 small { font-weight:500; color:var(--muted); font-size:13px; white-space:nowrap; }
+  label { display:flex; gap:12px; align-items:flex-start; padding:9px 0; border-top:1px solid var(--line); cursor:pointer; }
+  label:first-of-type { border-top:0; }
+  input[type=checkbox] { appearance:none; flex:0 0 22px; width:22px; height:22px; margin:1px 0 0; border:2px solid var(--muted); border-radius:6px; display:grid; place-content:center; cursor:pointer; }
+  input[type=checkbox]::after { content:"✓"; font-size:15px; font-weight:700; color:#fff; transform:scale(0); transition:transform .1s; }
+  input[type=checkbox]:checked { background:var(--accent); border-color:var(--accent); }
+  input[type=checkbox]:checked::after { transform:scale(1); }
+  input:checked + span { color:var(--done); text-decoration:line-through; }
+  .note { font-size:14px; color:var(--muted); margin:6px 0 0; }
+  .warn { color:#c2410c; font-weight:600; }
+  .help a { color:var(--accent); }
+  button { margin-top:10px; background:none; border:1px solid var(--line); color:var(--muted); border-radius:8px; padding:8px 12px; font:inherit; font-size:14px; cursor:pointer; }
+</style>
+</head>
+<body>
+<main>
+<div class="bar">
+  <header>
+    <h1>🇹🇭 Phuket Trip Checklist</h1>
+    <p>25 Nov – 2 Dec · Tap an item to tick it. Ticks are saved on your phone.</p>
+  </header>
+  <div class="meter"><span id="meter"></span></div>
+  <div class="count" id="count"></div>
+</div>
+
+<section>
+<h2>📱 Phones (before Tuesday night)</h2>
+<label><input type="checkbox"><span>Mom: Jio Thailand pack ₹951 + MyJio → Int'l roaming → Activate</span></label>
+<label><input type="checkbox"><span>Simran: Thailand eSIM installed on Wi-Fi on 24 Nov, kept OFF</span></label>
+<label><input type="checkbox"><span>Apps: WhatsApp, Grab, Bolt, Google Maps, Google Translate, MyJio, Niyo, Air India</span></label>
+<label><input type="checkbox"><span>Grab: Niyo card added</span></label>
+<label><input type="checkbox"><span>Google Maps: Phuket offline map + condo, Atom hotel, airport saved</span></label>
+<label><input type="checkbox"><span>Google Translate: Thai downloaded for offline use</span></label>
+<label><input type="checkbox"><span>TDAC QR page saved as a photo on every phone</span></label>
+</section>
+
+<section>
+<h2>💰 Money</h2>
+<label><input type="checkbox"><span>10,000 baht split between 2 people</span></label>
+<label><input type="checkbox"><span>Niyo card active, PIN known, international ON, money loaded</span></label>
+<label><input type="checkbox"><span>HDFC debit card international ON (backup)</span></label>
+<label><input type="checkbox"><span>₹2–3k Indian cash for Delhi and Bhopal</span></label>
+</section>
+
+<section>
+<h2>📂 Print folder (cabin bag)</h2>
+<label><input type="checkbox"><span>Air India e-tickets ×3</span></label>
+<label><input type="checkbox"><span>TDAC confirmation (QR pages)</span></label>
+<label><input type="checkbox"><span>Airbnb and Atom hotel bookings</span></label>
+<label><input type="checkbox"><span>Airport cab booking</span></label>
+<label><input type="checkbox"><span>Card copy signed by Rishabh (for Air India)</span></label>
+<label><input type="checkbox"><span>Travel insurance ×3</span></label>
+<label><input type="checkbox"><span>Passport copies ×3 + 2 photos each</span></label>
+<label><input type="checkbox"><span>Bank statement / Niyo balance</span></label>
+<label><input type="checkbox"><span>Trip sheet + this checklist</span></label>
+</section>
+
+<section>
+<h2>🎒 Cabin bag (each person)</h2>
+<label><input type="checkbox"><span>Passport</span></label>
+<label><input type="checkbox"><span>Phone + charger</span></label>
+<label><input type="checkbox"><span>Power bank (never in the suitcase)</span></label>
+<label><input type="checkbox"><span>Medicines + prescription copy</span></label>
+<label><input type="checkbox"><span>Liquids under 100 ml in a clear bag</span></label>
+<label><input type="checkbox"><span>Shawl or light jacket</span></label>
+<label><input type="checkbox"><span>One change of clothes</span></label>
+<label><input type="checkbox"><span>Snacks</span></label>
+</section>
+
+<section>
+<h2>💊 Medicines</h2>
+<label><input type="checkbox"><span>Regular medicines for 10 days + spare</span></label>
+<label><input type="checkbox"><span>Dolo (paracetamol)</span></label>
+<label><input type="checkbox"><span>Avomine (boat trips)</span></label>
+<label><input type="checkbox"><span>ORS</span></label>
+<label><input type="checkbox"><span>Antacid</span></label>
+<label><input type="checkbox"><span>Eldoper</span></label>
+<label><input type="checkbox"><span>Cetirizine</span></label>
+<label><input type="checkbox"><span>Plasters, pain spray, Vicks</span></label>
+<label><input type="checkbox"><span>Mosquito repellent</span></label>
+<label><input type="checkbox"><span>Sunscreen SPF 50</span></label>
+</section>
+
+<section>
+<h2>🧳 Suitcases (2, each under 23–25 kg)</h2>
+<label><input type="checkbox"><span>Light cotton clothes</span></label>
+<label><input type="checkbox"><span>Temple outfit each (shoulders + knees covered)</span></label>
+<label><input type="checkbox"><span>Swimwear</span></label>
+<label><input type="checkbox"><span>Cap, sunglasses</span></label>
+<label><input type="checkbox"><span>Flip-flops + walking shoes</span></label>
+<label><input type="checkbox"><span>Small umbrella</span></label>
+<label><input type="checkbox"><span>Travel adapter ×2</span></label>
+<label><input type="checkbox"><span>Toiletries</span></label>
+<label><input type="checkbox"><span>Sealed snacks (thepla, khakhra, namkeen)</span></label>
+<p class="note warn">🚫 No vapes (illegal in Thailand), no meat, no codeine cough syrup.</p>
+</section>
+
+<section>
+<h2>✈️ Wed 25 Nov: travel day</h2>
+<label><input type="checkbox"><span>Bhopal airport by 6:15 AM</span></label>
+<label><input type="checkbox"><span>Ask: "Bags checked through to Phuket? Boarding passes for both flights?"</span></label>
+<label><input type="checkbox"><span>AI1886 8:25 AM → Delhi T2 9:45 AM</span></label>
+<label><input type="checkbox"><span>Walk to T3 International → emigration → at gate by 1:00 PM</span></label>
+<label><input type="checkbox"><span>AI2376 1:40 PM → Phuket 7:45 PM (Thai time)</span></label>
+<label><input type="checkbox"><span>Phone ON, data roaming ON, WhatsApp "Landed"</span></label>
+<label><input type="checkbox"><span>Simran: Thailand eSIM ON, Indian SIM data roaming OFF</span></label>
+<label><input type="checkbox"><span>Immigration: passport + TDAC QR + return ticket</span></label>
+<label><input type="checkbox"><span>Bags → green "Nothing to declare" exit</span></label>
+<label><input type="checkbox"><span>Find the driver holding our name (go with no one else)</span></label>
+<label><input type="checkbox"><span>Condo ~10:30 PM, key from host, WhatsApp "Reached"</span></label>
+</section>
+
+<section>
+<h2>🌴 Every day in Phuket</h2>
+<p class="note">Untick these each night with the button at the bottom of this card.</p>
+<label><input type="checkbox"><span>Passports locked in the condo</span></label>
+<label><input type="checkbox"><span>Cash split between two people</span></label>
+<label><input type="checkbox"><span>Phones charged + power bank</span></label>
+<label><input type="checkbox"><span>Water, sunscreen, cap</span></label>
+<label><input type="checkbox"><span>Taxi by Grab/Bolt only</span></label>
+<label><input type="checkbox"><span>Temple day: covered clothes</span></label>
+<label><input type="checkbox"><span>Boat day: Avomine night before + morning</span></label>
+<button type="button" data-reset-section>Untick this card for a new day</button>
+</section>
+
+<section>
+<h2>🏨 Tue 1 Dec: move to the airport hotel</h2>
+<label><input type="checkbox"><span>Room checked; out by 12 noon; key returned</span></label>
+<label><input type="checkbox"><span>Grab to "Atom Phuket Hotel" (~1 hour)</span></label>
+<label><input type="checkbox"><span>Pay 1,344 baht in cash at the hotel</span></label>
+<label><input type="checkbox"><span>Reception: taxi for 4:45 AM booked; alarm set for 4:00 AM</span></label>
+</section>
+
+<section>
+<h2>🏠 Wed 2 Dec: fly home</h2>
+<label><input type="checkbox"><span>Leave the hotel at 4:45 AM</span></label>
+<label><input type="checkbox"><span>AI2379 7:35 AM → Delhi T3 11:00 AM</span></label>
+<label><input type="checkbox"><span>Immigration → collect bags → customs</span></label>
+<label><input type="checkbox"><span>Shuttle or prepaid taxi to Terminal 1</span></label>
+<label><input type="checkbox"><span>Air India EXPRESS counter check-in by 3:30 PM</span></label>
+<label><input type="checkbox"><span>AI9892 5:35 PM → Bhopal 7:05 PM, WhatsApp "Home" 🎉</span></label>
+</section>
+
+<section class="help">
+<h2>🆘 Help</h2>
+<p class="note">Tourist Police: <a href="tel:1155">1155</a> · Ambulance: <a href="tel:1669">1669</a></p>
+<p class="note">Host Raissa: <a href="tel:+66992373425">+66 99 237 3425</a></p>
+<p class="note">Atom hotel: <a href="tel:+6676530361">+66 76 530 361</a></p>
+<button type="button" id="resetAll">Untick everything</button>
+</section>
+</main>
+
+<script>
+(function () {
+  var KEY = "phuket-checklist-v1";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('input[type=checkbox]'));
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { state = {}; }
+
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+  function update() {
+    var done = boxes.filter(function (b) { return b.checked; }).length;
+    document.getElementById('meter').style.width = (done / boxes.length * 100) + '%';
+    document.getElementById('count').textContent = done + ' of ' + boxes.length + ' done';
+    document.querySelectorAll('section').forEach(function (sec) {
+      var bs = sec.querySelectorAll('input[type=checkbox]');
+      if (!bs.length) return;
+      var d = Array.prototype.filter.call(bs, function (b) { return b.checked; }).length;
+      var h = sec.querySelector('h2'), s = h.querySelector('small');
+      if (!s) { s = document.createElement('small'); h.appendChild(s); }
+      s.textContent = d + '/' + bs.length;
+    });
+  }
+
+  boxes.forEach(function (b, i) {
+    b.checked = !!state[i];
+    b.addEventListener('change', function () { state[i] = b.checked; save(); update(); });
+  });
+
+  document.querySelectorAll('[data-reset-section]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      btn.closest('section').querySelectorAll('input[type=checkbox]').forEach(function (b) {
+        b.checked = false; state[boxes.indexOf(b)] = false;
+      });
+      save(); update();
+    });
+  });
+
+  document.getElementById('resetAll').addEventListener('click', function () {
+    if (!confirm('Untick every item on this phone?')) return;
+    boxes.forEach(function (b, i) { b.checked = false; state[i] = false; });
+    save(); update();
+  });
+
+  update();
+})();
+</script>
+</body>
+</html>
