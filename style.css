@@ -246,3 +246,37 @@ ol.g-steps li::before { content: counter(g); position: absolute; left: 0; top: 5
 .sync { font-size: 12px; font-weight: 700; margin: 6px 4px 0; color: var(--muted); }
 .sync.ok { color: var(--accent); }
 .sync.warn { color: #c2410c; }
+
+/* Fold-out checklist cards (travel day, move, fly home) */
+section.fold { padding: 0; overflow: hidden; }
+section.fold details > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px; padding: 14px 16px; }
+section.fold details > summary::-webkit-details-marker { display: none; }
+section.fold details > summary h2 { margin: 0; flex: 1; }
+section.fold .tap { font-size: 12px; font-weight: 800; color: #fff; background: var(--accent); padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
+section.fold details:not([open]) .tap::after { content: " ▼"; }
+section.fold details[open] .tap::after { content: " ▲"; }
+section.fold details > label { margin: 0 12px; padding-left: 4px; padding-right: 4px; }
+section.fold details > label:last-of-type { margin-bottom: 8px; }
+section.fold details[open] > summary { border-bottom: 1px solid var(--line); }
+
+/* Day-plan buttons: glow + "tap me" hint */
+@keyframes glow {
+  0%   { box-shadow: 0 0 0 0 rgba(14, 138, 126, .55), 0 6px 20px rgba(0,0,0,.22); }
+  70%  { box-shadow: 0 0 0 14px rgba(14, 138, 126, 0), 0 6px 20px rgba(0,0,0,.22); }
+  100% { box-shadow: 0 0 0 0 rgba(14, 138, 126, 0), 0 6px 20px rgba(0,0,0,.22); }
+}
+@keyframes glow-warm {
+  0%   { box-shadow: 0 0 0 0 rgba(246, 169, 91, .6); }
+  70%  { box-shadow: 0 0 0 14px rgba(246, 169, 91, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(246, 169, 91, 0); }
+}
+@keyframes slide-arrow { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+@keyframes tap-hint { 0%, 60%, 100% { transform: scale(1); } 70% { transform: scale(.96); } 80% { transform: scale(1.02); } }
+.cta-hero { animation: glow 2s ease-out infinite, tap-hint 3s ease-in-out infinite; }
+.cta-card { animation: glow-warm 2.2s ease-out infinite, tap-hint 3.4s ease-in-out infinite; }
+.cta-float { animation: glow 2s ease-out infinite; }
+.cta-hero .arrow, .cta-card .arrow { display: inline-block; animation: slide-arrow 1.2s ease-in-out infinite; }
+.cta-hero b::after, .cta-card b::after { content: "  👆 tap"; font-size: 12px; font-weight: 700; opacity: .75; }
+@media (prefers-reduced-motion: reduce) {
+  .cta-hero, .cta-card, .cta-float, .cta-hero .arrow, .cta-card .arrow { animation: none; }
+}
