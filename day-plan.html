@@ -157,5 +157,15 @@
 </section>
 <footer>Have a wonderful trip! 🌅</footer>
 </main>
+<script>
+// Ask before calling: no accidental calls from the help buttons
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a[href^="tel:"]');
+  if (!a) return;
+  var name = (a.childNodes[0] && a.childNodes[0].textContent || a.textContent).trim();
+  var num = a.getAttribute('href').replace('tel:', '');
+  if (!confirm('Call ' + (name && name !== num ? name + ' (' + num + ')' : num) + '?')) e.preventDefault();
+});
+</script>
 </body>
 </html>
