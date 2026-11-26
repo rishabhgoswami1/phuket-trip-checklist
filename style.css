@@ -283,3 +283,20 @@ section.fold details[open] > summary { border-bottom: 1px solid var(--line); }
 
 .subhead { display: flex; justify-content: space-between; align-items: center; margin: 22px 4px 6px; font-size: 15px; font-weight: 800; color: var(--ink); }
 .subhead .count2 { font-size: 12px; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 3px 9px; border-radius: 999px; }
+
+/* Past days: folded, tap to open. Today: glowing. */
+.day.past { cursor: pointer; opacity: .78; }
+.day.past > :not(.date):not(h2) { display: none; }
+.day.past.open > :not(.date):not(h2) { display: revert; }
+.day.past.open > .stop { display: grid; }
+.day.past .date { color: var(--done); }
+.day.past .date::after { content: " · ✓ Done"; color: var(--accent); }
+.day.past h2::after { content: "▾ Tap"; float: right; font-size: 12px; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 3px 9px; border-radius: 999px; }
+.day.past.open h2::after { content: "▴ Close"; }
+.day.today { border: 2px solid var(--sun); animation: todayGlow 2.4s ease-in-out infinite; scroll-margin-top: 12px; }
+.day.today .date::after { content: " · ★ Today"; color: var(--sun); }
+@keyframes todayGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(242, 153, 74, .25), 0 6px 18px rgba(242, 153, 74, .25); }
+  50% { box-shadow: 0 0 0 6px rgba(242, 153, 74, .18), 0 8px 28px rgba(242, 153, 74, .45); }
+}
+@media (prefers-reduced-motion: reduce) { .day.today { animation: none; box-shadow: 0 0 0 4px rgba(242, 153, 74, .3); } }
